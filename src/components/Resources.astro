@@ -1,0 +1,238 @@
+---
+const resources = [
+  {
+    title: "SailPoint Developer Community",
+    description:
+      "Join the official SailPoint developer community to discuss Identity Security Cloud, IdentityIQ, APIs, SDKs and implementation best practices.",
+    link: "https://developer.sailpoint.com/discuss/",
+    button: "Visit Community"
+  },
+  {
+    title: "SailPoint Support Portal",
+    description:
+      "Access official SailPoint product documentation, support articles, release notes and customer resources.",
+    link: "https://support.sailpoint.com",
+    button: "Open Support"
+  },
+  {
+    title: "File Upload Utility Discussion",
+    description:
+      "Read the SailPoint developer discussion on the File Upload Utility, implementation guidance and community responses.",
+    link: "https://developer.sailpoint.com/discuss/t/file-upload-utility/18181",
+    button: "Read Discussion"
+  }
+];
+---
+
+<section id="resources" class="resources">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span>LEARNING RESOURCES</span>
+
+            <h2>Recommended SailPoint Resources</h2>
+
+            <p>
+                Explore official SailPoint documentation, developer discussions
+                and community knowledge to strengthen your Identity Governance
+                expertise.
+            </p>
+
+        </div>
+
+        <div class="resource-grid">
+
+            {
+                resources.map(resource => (
+
+                    <article class="resource-card">
+
+                        <div class="resource-icon">
+
+                            📚
+
+                        </div>
+
+                        <h3>{resource.title}</h3>
+
+                        <p>{resource.description}</p>
+
+                        <a
+                            href={resource.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn"
+                        >
+                            {resource.button} →
+                        </a>
+
+                    </article>
+
+                ))
+            }
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+.resources{
+
+padding:120px 0;
+
+background:white;
+
+}
+
+.section-header{
+
+max-width:760px;
+
+margin:auto;
+
+text-align:center;
+
+margin-bottom:70px;
+
+}
+
+.section-header span{
+
+font-size:.85rem;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+color:#2563EB;
+
+}
+
+.section-header h2{
+
+font-size:3rem;
+
+margin:20px 0;
+
+color:#0F172A;
+
+}
+
+.section-header p{
+
+font-size:1.1rem;
+
+line-height:1.8;
+
+color:#64748B;
+
+}
+
+.resource-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+.resource-card{
+
+background:#F8FAFC;
+
+padding:35px;
+
+border-radius:24px;
+
+border:1px solid #E2E8F0;
+
+transition:.35s;
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.resource-card:hover{
+
+transform:translateY(-8px);
+
+border-color:#2563EB;
+
+box-shadow:0 30px 70px rgba(37,99,235,.15);
+
+}
+
+.resource-icon{
+
+font-size:2.5rem;
+
+margin-bottom:20px;
+
+}
+
+.resource-card h3{
+
+margin-bottom:15px;
+
+color:#0F172A;
+
+}
+
+.resource-card p{
+
+flex:1;
+
+line-height:1.8;
+
+color:#64748B;
+
+margin-bottom:30px;
+
+}
+
+.btn{
+
+display:inline-block;
+
+padding:12px 22px;
+
+background:#2563EB;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:999px;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.btn:hover{
+
+background:#1D4ED8;
+
+}
+
+@media(max-width:1000px){
+
+.resource-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>

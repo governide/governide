@@ -1,0 +1,269 @@
+---
+const testimonials = [
+  {
+    name: "Head of Identity",
+    role: "Financial Services",
+    image: "/images/testimonials/client1.jpg",
+    quote:
+      "GovernIDE transformed our Identity Governance programme. Their SailPoint expertise and structured delivery enabled us to modernise access management with minimal disruption."
+  },
+  {
+    name: "Security Architect",
+    role: "Government Agency",
+    image: "/images/testimonials/client2.jpg",
+    quote:
+      "Their deep understanding of SailPoint ISC, IdentityIQ and enterprise architecture allowed us to deliver a secure and scalable IAM platform ahead of schedule."
+  },
+  {
+    name: "IAM Engineering Manager",
+    role: "Transport Organisation",
+    image: "/images/testimonials/client3.jpg",
+    quote:
+      "The hands-on mentoring and production-focused training significantly improved our team's capability. Every session reflected real enterprise implementation experience."
+  }
+];
+---
+
+<section id="testimonials" class="testimonials">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span>CLIENT SUCCESS</span>
+
+            <h2>Trusted by Enterprise Teams</h2>
+
+            <p>
+                Real-world consulting, enterprise delivery and practical
+                mentoring have helped organisations successfully implement
+                Identity Governance solutions.
+            </p>
+
+        </div>
+
+        <div class="testimonial-grid">
+
+            {
+                testimonials.map((testimonial) => (
+
+                    <article class="testimonial-card">
+
+                        <img
+                            src={testimonial.image}
+                            alt={testimonial.role}
+                            class="testimonial-image"
+                        />
+
+                        <div class="card-content">
+
+                            <div class="stars">
+                                ★★★★★
+                            </div>
+
+                            <p class="quote">
+                                "{testimonial.quote}"
+                            </p>
+
+                            <div class="author">
+
+                                <h4>{testimonial.name}</h4>
+
+                                <span>{testimonial.role}</span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                ))
+            }
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+.testimonials{
+
+padding:120px 0;
+
+background:#F8FAFC;
+
+}
+
+.section-header{
+
+max-width:760px;
+
+margin:auto;
+
+text-align:center;
+
+margin-bottom:70px;
+
+}
+
+.section-header span{
+
+font-size:.85rem;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+color:#2563EB;
+
+}
+
+.section-header h2{
+
+font-size:3rem;
+
+margin:20px 0;
+
+color:#0F172A;
+
+}
+
+.section-header p{
+
+font-size:1.1rem;
+
+line-height:1.8;
+
+color:#64748B;
+
+}
+
+.testimonial-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:35px;
+
+}
+
+.testimonial-card{
+
+background:white;
+
+border-radius:24px;
+
+overflow:hidden;
+
+border:1px solid #E2E8F0;
+
+box-shadow:0 20px 50px rgba(15,23,42,.06);
+
+transition:.35s;
+
+}
+
+.testimonial-card:hover{
+
+transform:translateY(-10px);
+
+border-color:#2563EB;
+
+box-shadow:0 35px 80px rgba(37,99,235,.18);
+
+}
+
+.testimonial-image{
+
+width:100%;
+
+height:280px;
+
+object-fit:cover;
+
+display:block;
+
+}
+
+.card-content{
+
+padding:30px;
+
+}
+
+.stars{
+
+font-size:1.2rem;
+
+color:#FBBF24;
+
+margin-bottom:20px;
+
+letter-spacing:2px;
+
+}
+
+.quote{
+
+font-size:1rem;
+
+line-height:1.9;
+
+color:#475569;
+
+min-height:150px;
+
+}
+
+.author{
+
+border-top:1px solid #E2E8F0;
+
+margin-top:30px;
+
+padding-top:20px;
+
+}
+
+.author h4{
+
+margin:0;
+
+font-size:1.15rem;
+
+color:#0F172A;
+
+}
+
+.author span{
+
+display:block;
+
+margin-top:6px;
+
+color:#2563EB;
+
+font-weight:600;
+
+}
+
+@media(max-width:1000px){
+
+.testimonial-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.quote{
+
+min-height:auto;
+
+}
+
+}
+
+</style>

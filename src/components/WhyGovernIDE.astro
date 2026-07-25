@@ -1,0 +1,231 @@
+---
+const reasons = [
+  {
+    title: "Enterprise Experience",
+    description:
+      "14+ years delivering Identity Governance and enterprise security solutions across government, banking, transport and large enterprises.",
+    icon: "🏢"
+  },
+  {
+    title: "SailPoint Specialists",
+    description:
+      "Deep expertise in SailPoint Identity Security Cloud (ISC), IdentityIQ and enterprise Identity Governance implementations.",
+    icon: "🛡️"
+  },
+  {
+    title: "Real Project Delivery",
+    description:
+      "Hands-on implementation experience with Java, Spring Boot, Active Directory, Azure AD, Workday and ServiceNow integrations.",
+    icon: "⚙️"
+  },
+  {
+    title: "Training & Mentoring",
+    description:
+      "Enterprise-focused mentoring, interview preparation and real-world implementation scenarios for IAM professionals.",
+    icon: "🎓"
+  }
+];
+---
+
+<section id="why-governide" class="why">
+
+    <div class="container">
+
+        <div class="heading">
+
+            <span>WHY GOVERNIDE</span>
+
+            <h2>
+                Enterprise Expertise.<br>
+                Practical Delivery.
+            </h2>
+
+            <p>
+                We combine consulting, architecture, implementation and
+                professional training to help organisations build secure,
+                compliant and scalable Identity Governance solutions.
+            </p>
+
+        </div>
+
+        <div class="why-grid">
+
+            {
+                reasons.map((reason) => (
+
+                    <article class="why-card">
+
+                        <div class="icon">
+
+                            {reason.icon}
+
+                        </div>
+
+                        <h3>{reason.title}</h3>
+
+                        <p>{reason.description}</p>
+
+                    </article>
+
+                ))
+            }
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+.why{
+
+padding:120px 0;
+
+background:#ffffff;
+
+}
+
+.heading{
+
+max-width:760px;
+
+margin:auto;
+
+text-align:center;
+
+margin-bottom:70px;
+
+}
+
+.heading span{
+
+display:inline-block;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+font-size:.9rem;
+
+color:#2563EB;
+
+margin-bottom:18px;
+
+}
+
+.heading h2{
+
+font-size:3rem;
+
+line-height:1.2;
+
+margin-bottom:20px;
+
+color:#0F172A;
+
+}
+
+.heading p{
+
+font-size:1.1rem;
+
+line-height:1.8;
+
+color:#64748B;
+
+}
+
+.why-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:30px;
+
+}
+
+.why-card{
+
+background:white;
+
+border:1px solid #E2E8F0;
+
+border-radius:24px;
+
+padding:40px;
+
+transition:.35s;
+
+box-shadow:0 12px 40px rgba(15,23,42,.05);
+
+}
+
+.why-card:hover{
+
+transform:translateY(-8px);
+
+border-color:#2563EB;
+
+box-shadow:0 30px 70px rgba(37,99,235,.15);
+
+}
+
+.icon{
+
+width:72px;
+
+height:72px;
+
+background:#EEF4FF;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:2rem;
+
+border-radius:20px;
+
+margin-bottom:24px;
+
+}
+
+.why-card h3{
+
+font-size:1.5rem;
+
+margin-bottom:15px;
+
+color:#0F172A;
+
+}
+
+.why-card p{
+
+line-height:1.8;
+
+color:#64748B;
+
+}
+
+@media(max-width:900px){
+
+.why-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.heading h2{
+
+font-size:2.4rem;
+
+}
+
+}
+
+</style>

@@ -1,0 +1,299 @@
+---
+const industries = [
+  {
+    title: "Government",
+    icon: "🏛️",
+    description: "Identity governance, citizen identity, privileged access and compliance for government agencies.",
+    tags: ["SailPoint", "Compliance", "Identity Governance"]
+  },
+  {
+    title: "Banking & Finance",
+    icon: "🏦",
+    description: "Zero Trust, privileged access and identity lifecycle management for financial institutions.",
+    tags: ["Zero Trust", "IAM", "RBAC"]
+  },
+  {
+    title: "Insurance",
+    icon: "🛡️",
+    description: "Modern identity governance, audit readiness and secure workforce identity management.",
+    tags: ["Governance", "Audit", "Access Reviews"]
+  },
+  {
+    title: "Healthcare",
+    icon: "🏥",
+    description: "Secure patient, clinician and workforce identities while meeting regulatory requirements.",
+    tags: ["Healthcare", "HIPAA", "Identity"]
+  },
+  {
+    title: "Transport",
+    icon: "🚆",
+    description: "Enterprise IAM across complex transport organisations and operational technology.",
+    tags: ["Transport", "Identity", "Lifecycle"]
+  },
+  {
+    title: "Education",
+    icon: "🎓",
+    description: "Secure digital identities for students, academics, contractors and administration staff.",
+    tags: ["Students", "Staff", "Provisioning"]
+  }
+];
+---
+
+<section id="industries" class="industries">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>INDUSTRIES WE SERVE</span>
+
+            <h2>
+                Identity Solutions Across Critical Industries
+            </h2>
+
+            <p>
+                GovernIDE delivers enterprise Identity Governance,
+                SailPoint implementation and IAM consulting across
+                highly regulated industries where security,
+                compliance and digital identity are business critical.
+            </p>
+
+        </div>
+
+        <div class="industry-grid">
+
+            {
+                industries.map((industry) => (
+
+                    <article class="industry-card">
+
+                        <div class="industry-icon">
+
+                            {industry.icon}
+
+                        </div>
+
+                        <h3>{industry.title}</h3>
+
+                        <p>{industry.description}</p>
+
+                        <div class="tags">
+
+                            {
+                                industry.tags.map(tag => (
+
+                                    <span>{tag}</span>
+
+                                ))
+                            }
+
+                        </div>
+
+                    </article>
+
+                ))
+            }
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+.industries{
+
+padding:120px 0;
+
+background:#f8fafc;
+
+}
+
+.section-heading{
+
+max-width:760px;
+
+margin:auto;
+
+text-align:center;
+
+margin-bottom:70px;
+
+}
+
+.section-heading span{
+
+display:inline-block;
+
+font-size:.9rem;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+color:#2563EB;
+
+margin-bottom:18px;
+
+}
+
+.section-heading h2{
+
+font-size:3rem;
+
+line-height:1.2;
+
+margin-bottom:20px;
+
+color:#0F172A;
+
+}
+
+.section-heading p{
+
+font-size:1.1rem;
+
+line-height:1.8;
+
+color:#64748B;
+
+}
+
+.industry-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+.industry-card{
+
+background:white;
+
+padding:36px;
+
+border-radius:24px;
+
+border:1px solid #E2E8F0;
+
+box-shadow:0 12px 40px rgba(15,23,42,.06);
+
+transition:.35s;
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.industry-card:hover{
+
+transform:translateY(-8px);
+
+border-color:#2563EB;
+
+box-shadow:0 30px 70px rgba(37,99,235,.15);
+
+}
+
+.industry-icon{
+
+width:72px;
+
+height:72px;
+
+border-radius:18px;
+
+background:#EEF4FF;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:2rem;
+
+margin-bottom:25px;
+
+}
+
+.industry-card h3{
+
+font-size:1.4rem;
+
+margin-bottom:16px;
+
+color:#0F172A;
+
+}
+
+.industry-card p{
+
+line-height:1.8;
+
+color:#64748B;
+
+margin-bottom:28px;
+
+flex:1;
+
+}
+
+.tags{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+}
+
+.tags span{
+
+background:#EFF6FF;
+
+color:#2563EB;
+
+padding:8px 14px;
+
+border-radius:999px;
+
+font-size:.85rem;
+
+font-weight:600;
+
+}
+
+@media(max-width:1100px){
+
+.industry-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:700px){
+
+.section-heading h2{
+
+font-size:2.3rem;
+
+}
+
+.industry-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>

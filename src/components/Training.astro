@@ -1,0 +1,225 @@
+---
+const courses = [
+  {
+    title: "SailPoint Identity Security Cloud (ISC)",
+    level: "Intermediate",
+    duration: "4–6 Weeks",
+    mode: "Online / Corporate",
+    description:
+      "Master Identity Security Cloud with hands-on enterprise labs and real implementation scenarios.",
+    topics: [
+      "Identity Lifecycle",
+      "Provisioning",
+      "Access Requests",
+      "Certifications",
+      "RBAC",
+      "Application Onboarding",
+    ],
+  },
+  {
+    title: "SailPoint IdentityIQ",
+    level: "Advanced",
+    duration: "6–8 Weeks",
+    mode: "Corporate Training",
+    description:
+      "Deep dive into IdentityIQ architecture, workflows, rules, connectors and custom integrations.",
+    topics: [
+      "IIQ Architecture",
+      "Rules & Workflows",
+      "LCM",
+      "Aggregation",
+      "Provisioning",
+      "Reporting",
+    ],
+  },
+  {
+    title: "IAM Interview Preparation",
+    level: "All Levels",
+    duration: "2 Weeks",
+    mode: "1-to-1 Mentoring",
+    description:
+      "Prepare for real enterprise IAM interviews with scenario-based coaching and mock interviews.",
+    topics: [
+      "Mock Interviews",
+      "Real Scenarios",
+      "Resume Review",
+      "Java + IAM",
+      "Behavioural Questions",
+      "Architecture",
+    ],
+  },
+];
+---
+
+<section id="training" class="training">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <span class="eyebrow">TRAINING PROGRAMMES</span>
+
+      <h2>Learn from Real Enterprise Experience</h2>
+
+      <p>
+        Every programme is built around real enterprise implementations,
+        practical exercises and mentoring—not just theory.
+      </p>
+
+    </div>
+
+    <div class="course-grid">
+
+      {
+        courses.map(course => (
+
+          <article class="course-card">
+
+            <div class="course-header">
+
+              <span class="badge">
+                {course.level}
+              </span>
+
+              <h3>{course.title}</h3>
+
+            </div>
+
+            <p>{course.description}</p>
+
+            <div class="meta">
+
+              <span>⏱ {course.duration}</span>
+
+              <span>💻 {course.mode}</span>
+
+            </div>
+
+            <ul>
+
+              {
+                course.topics.map(topic => (
+                  <li>✔ {topic}</li>
+                ))
+              }
+
+            </ul>
+
+            <a href="#contact" class="btn btn-primary">
+
+              Enquire Now
+
+            </a>
+
+          </article>
+
+        ))
+      }
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+.training{
+background:#f8fafc;
+}
+
+.heading{
+text-align:center;
+margin-bottom:70px;
+}
+
+.eyebrow{
+color:#2563eb;
+font-weight:700;
+letter-spacing:2px;
+}
+
+.heading h2{
+margin:20px 0;
+}
+
+.heading p{
+max-width:720px;
+margin:auto;
+}
+
+.course-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.course-card{
+background:white;
+padding:38px;
+border-radius:24px;
+box-shadow:0 20px 60px rgba(15,23,42,.08);
+border:1px solid #e2e8f0;
+display:flex;
+flex-direction:column;
+transition:.3s;
+}
+
+.course-card:hover{
+transform:translateY(-8px);
+box-shadow:0 35px 70px rgba(37,99,235,.18);
+}
+
+.badge{
+display:inline-block;
+padding:6px 14px;
+border-radius:999px;
+background:#dbeafe;
+color:#1d4ed8;
+font-weight:700;
+font-size:.85rem;
+margin-bottom:18px;
+}
+
+.course-card h3{
+margin-bottom:18px;
+}
+
+.meta{
+display:flex;
+justify-content:space-between;
+margin:25px 0;
+font-size:.9rem;
+color:#64748b;
+}
+
+.course-card ul{
+list-style:none;
+padding:0;
+margin:0 0 30px;
+flex:1;
+}
+
+.course-card li{
+padding:10px 0;
+border-bottom:1px solid #f1f5f9;
+}
+
+.course-card .btn{
+width:100%;
+}
+
+@media(max-width:1000px){
+
+.course-grid{
+grid-template-columns:1fr;
+}
+
+.meta{
+flex-direction:column;
+gap:8px;
+}
+
+}
+
+</style>

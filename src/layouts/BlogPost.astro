@@ -1,5 +1,4 @@
 ---
-import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -7,7 +6,19 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+let title: string | undefined;
+let description: string | undefined;
+let pubDate: Date | undefined;
+let updatedDate: Date | undefined;
+let heroImage: string | undefined;
+let renderError: string | null = null;
+
+try {
+	const props = Astro.props || {};
+	({ title, description, pubDate, updatedDate, heroImage } = props as any);
+} catch (e: any) {
+	renderError = String(e && (e.message || e)) || 'Unknown error during layout props parsing';
+}
 ---
 
 <html lang="en">
@@ -55,6 +66,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	</head>
 
 	<body>
+		{renderError ? <pre style="color:red; padding:1rem; background:#fee">{renderError}</pre> : null}
 		<Header />
 		<main>
 			<article>
@@ -76,7 +88,13 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 						<h1>{title}</h1>
 						<hr />
 					</div>
-					<slot />
+					{(() => {
+						try {
+							return <slot />;
+						} catch (e: any) {
+							return <pre style="color:red; padding:1rem; background:#fee">Slot render error: {String(e && (e.message || e))}</pre>;
+						}
+					})()}
 				</div>
 			</article>
 		</main>

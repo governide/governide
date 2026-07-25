@@ -1,64 +1,66 @@
-# Astro Starter Kit: Blog
+# Governide
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/astro-blog-starter-template)
+Governide is a personal website and blog built for fast performance, clean typography, and easy content updates.
 
-![Astro Template Preview](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+## Features
 
-<!-- dash-content-start -->
-
-Create a blog with Astro and deploy it on Cloudflare Workers as a [static website](https://developers.cloudflare.com/workers/static-assets/).
-
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-- ✅ Built-in Observability logging
-
-<!-- dash-content-end -->
+- ✅ Modern, responsive personal website
+- ✅ Blog with Markdown and MDX support
+- ✅ SEO-ready pages with metadata and sitemap support
+- ✅ Contact page and polished navigation
+- ✅ Cloudflare Workers deployment ready
+- ✅ Simple content structure for easy editing
 
 ## Getting Started
 
-Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
+From the project root:
 
 ```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/astro-blog-starter-template
+npm install
+npm run dev
 ```
 
-A live public deployment of this template is available at [https://astro-blog-starter-template.templates.workers.dev](https://astro-blog-starter-template.templates.workers.dev)
+Then open `http://localhost:4321` in your browser.
 
-## 🚀 Project Structure
+## Project Structure
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- `src/pages/` — top-level site routes like `index.astro`, `about.astro`, and `contact.astro`
+- `src/components/` — shared UI components such as header, footer, and metadata
+- `src/layouts/` — layouts used for blog posts and content pages
+- `src/content/blog/` — blog posts written in Markdown/MDX
+- `public/` — static assets like images and fonts
+- `src/styles/` — global CSS and design tokens
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Commands
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+| Command           | Action                         |
+| :---------------- | :----------------------------- |
+| `npm install`     | Install dependencies           |
+| `npm run dev`     | Start local development server |
+| `npm run build`   | Build production output        |
+| `npm run preview` | Preview the built site locally |
+| `npm run deploy`  | Deploy to Cloudflare Workers   |
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Customize Governide
 
-## 🧞 Commands
+- Update `src/consts.ts` with your site title and description
+- Edit `src/pages/index.astro` for homepage content
+- Add blog posts in `src/content/blog/`
+- Change social links in `src/components/Header.astro` and `src/components/Footer.astro`
+- Use `src/pages/about.astro` and `src/pages/contact.astro` for personal pages
 
-All commands are run from the root of the project, from a terminal:
+## Deployment
 
-| Command                           | Action                                           |
-| :-------------------------------- | :----------------------------------------------- |
-| `npm install`                     | Installs dependencies                            |
-| `npm run dev`                     | Starts local dev server at `localhost:4321`      |
-| `npm run build`                   | Build your production site to `./dist/`          |
-| `npm run preview`                 | Preview your build locally, before deploying     |
-| `npm run astro ...`               | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help`         | Get help using the Astro CLI                     |
-| `npm run build && npm run deploy` | Deploy your production site to Cloudflare        |
-| `npm wrangler tail`               | View real-time logs for all Workers              |
+This site is configured to deploy with Cloudflare using `wrangler`.
 
-## 👀 Want to learn more?
+```bash
+npm run deploy
+```
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Notes
 
-## Credit
+This site is built with a modern static site framework, and the structure is designed to keep content and layout easy to update. Static assets belong in `public/`, and shared UI elements are located in `src/components/`.
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+## Want to learn more?
+
+Explore the framework documentation if you want to extend the site with additional integrations or features.

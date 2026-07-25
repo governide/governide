@@ -1,0 +1,121 @@
+<section class="stats-section">
+
+<div class="container">
+
+<div class="stats-grid">
+
+<div class="stat-card">
+<span class="number">14+</span>
+<span class="label">Years Experience</span>
+</div>
+
+<div class="stat-card">
+<span class="number">50+</span>
+<span class="label">Enterprise Projects</span>
+</div>
+
+<div class="stat-card">
+<span class="number">20+</span>
+<span class="label">Enterprise Clients</span>
+</div>
+
+<div class="stat-card">
+<span class="number">100+</span>
+<span class="label">Professionals Mentored</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.stats-section{
+
+margin-top:-70px;
+
+position:relative;
+
+z-index:10;
+
+}
+
+.stats-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+}
+
+.stat-card{
+
+background:white;
+
+padding:40px;
+
+border-radius:24px;
+
+text-align:center;
+
+box-shadow:0 20px 60px rgba(15,23,42,.08);
+
+transition:.3s;
+
+}
+
+.stat-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 30px 80px rgba(37,99,235,.18);
+
+}
+
+.number{
+
+display:block;
+
+font-size:3rem;
+
+font-weight:800;
+
+color:#2563eb;
+
+margin-bottom:10px;
+
+}
+
+.label{
+
+color:#64748b;
+
+font-size:1rem;
+
+}
+
+@media(max-width:900px){
+
+.stats-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:600px){
+
+.stats-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>

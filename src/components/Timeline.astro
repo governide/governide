@@ -1,0 +1,322 @@
+---
+const phases = [
+  {
+    number: "01",
+    title: "Discover",
+    description:
+      "Assess your current identity landscape, business objectives, compliance requirements and existing access model."
+  },
+  {
+    number: "02",
+    title: "Design",
+    description:
+      "Define a scalable Identity Governance architecture including roles, lifecycle, integrations and security controls."
+  },
+  {
+    number: "03",
+    title: "Implement",
+    description:
+      "Deploy SailPoint solutions, automate provisioning, integrate enterprise applications and validate security."
+  },
+  {
+    number: "04",
+    title: "Govern",
+    description:
+      "Operate certifications, access reviews, RBAC, policy management and continuous compliance."
+  },
+  {
+    number: "05",
+    title: "Optimise",
+    description:
+      "Measure success, improve automation, reduce risk and continuously enhance identity maturity."
+  }
+];
+---
+
+<section id="framework" class="framework">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span>OUR DELIVERY FRAMEWORK</span>
+
+            <h2>
+                A Proven Identity Governance Methodology
+            </h2>
+
+            <p>
+                Every engagement follows a structured five-stage framework
+                designed to minimise risk, accelerate delivery and maximise
+                long-term business value.
+            </p>
+
+        </div>
+
+        <div class="timeline">
+
+            {
+                phases.map((phase) => (
+
+                    <div class="timeline-item">
+
+                        <div class="circle">
+
+                            {phase.number}
+
+                        </div>
+
+                        <div class="line"></div>
+
+                        <div class="card">
+
+                            <h3>{phase.title}</h3>
+
+                            <p>{phase.description}</p>
+
+                        </div>
+
+                    </div>
+
+                ))
+            }
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+.framework{
+
+padding:120px 0;
+
+background:white;
+
+}
+
+.section-header{
+
+text-align:center;
+
+max-width:760px;
+
+margin:auto;
+
+margin-bottom:80px;
+
+}
+
+.section-header span{
+
+display:inline-block;
+
+font-size:.9rem;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+color:#2563EB;
+
+margin-bottom:18px;
+
+}
+
+.section-header h2{
+
+font-size:3rem;
+
+margin-bottom:20px;
+
+color:#0F172A;
+
+}
+
+.section-header p{
+
+font-size:1.1rem;
+
+line-height:1.8;
+
+color:#64748B;
+
+}
+
+.timeline{
+
+display:grid;
+
+grid-template-columns:repeat(5,1fr);
+
+gap:25px;
+
+position:relative;
+
+}
+
+.timeline::before{
+
+content:"";
+
+position:absolute;
+
+left:10%;
+
+right:10%;
+
+top:38px;
+
+height:3px;
+
+background:#DBEAFE;
+
+z-index:0;
+
+}
+
+.timeline-item{
+
+position:relative;
+
+text-align:center;
+
+z-index:1;
+
+}
+
+.circle{
+
+width:76px;
+
+height:76px;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,#2563EB,#1D4ED8);
+
+color:white;
+
+font-size:1.2rem;
+
+font-weight:700;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+margin:0 auto;
+
+box-shadow:0 15px 40px rgba(37,99,235,.25);
+
+}
+
+.card{
+
+margin-top:35px;
+
+background:#F8FAFC;
+
+border:1px solid #E2E8F0;
+
+padding:30px;
+
+border-radius:22px;
+
+transition:.35s;
+
+height:240px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:flex-start;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+border-color:#2563EB;
+
+box-shadow:0 25px 60px rgba(37,99,235,.15);
+
+}
+
+.card h3{
+
+font-size:1.4rem;
+
+margin-bottom:18px;
+
+color:#0F172A;
+
+}
+
+.card p{
+
+color:#64748B;
+
+line-height:1.7;
+
+}
+
+.line{
+
+display:none;
+
+}
+
+@media(max-width:1200px){
+
+.timeline{
+
+grid-template-columns:1fr;
+
+}
+
+.timeline::before{
+
+display:none;
+
+}
+
+.timeline-item{
+
+display:grid;
+
+grid-template-columns:90px 1fr;
+
+gap:25px;
+
+align-items:flex-start;
+
+text-align:left;
+
+margin-bottom:35px;
+
+}
+
+.card{
+
+margin-top:0;
+
+height:auto;
+
+}
+
+.circle{
+
+margin:0;
+
+}
+
+}
+
+</style>

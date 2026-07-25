@@ -1,0 +1,120 @@
+---
+const links = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "#services" },
+  { label: "Training", href: "#training" },
+  { label: "Resources", href: "#resources" },
+  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
+];
+---
+
+<header class="navbar">
+
+  <div class="container navbar-container">
+
+   <a href="/" class="logo">
+  <img
+    src="/images/governide_2.png"
+    alt="GovernIDE"
+    width="98"
+    height="98"
+  />
+
+  <span>GovernIDE</span>
+</a>
+
+    <nav>
+      {links.map((link) => (
+        <a href={link.href}>{link.label}</a>
+      ))}
+    </nav>
+
+    <a href="#contact" class="btn btn-primary">
+      Book Consultation
+    </a>
+
+  </div>
+
+</header>
+
+<style>
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #e2e8f0;
+}
+
+.navbar-container{
+    height:82px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:.75rem;
+    text-decoration:none;
+}
+
+.logo-icon{
+    font-size:1.8rem;
+}
+
+.logo-text{
+    font-size:1.45rem;
+    font-weight:800;
+    color:#0f172a;
+}
+
+nav{
+    display:flex;
+    gap:2.5rem;
+}
+
+nav a{
+    text-decoration:none;
+    color:#475569;
+    font-weight:600;
+    transition:.3s;
+    position:relative;
+}
+
+nav a:hover{
+    color:#2563eb;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:2px;
+    background:#2563eb;
+    transition:.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+@media(max-width:1024px){
+
+nav{
+display:none;
+}
+
+.navbar .btn{
+display:none;
+}
+
+}
+
+</style>

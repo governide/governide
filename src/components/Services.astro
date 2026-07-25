@@ -1,0 +1,259 @@
+---
+const services = [
+  {
+    title: "Identity Governance",
+    icon: "🔐",
+    description:
+      "Design and implement enterprise Identity Governance, Joiner-Mover-Leaver lifecycle, access reviews and compliance.",
+    bullets: [
+      "Identity Lifecycle",
+      "Birthright Access",
+      "Access Certifications"
+    ]
+  },
+  {
+    title: "SailPoint Consulting",
+    icon: "🛡️",
+    description:
+      "Implementation, migration and optimisation of SailPoint ISC and IdentityIQ platforms.",
+    bullets: [
+      "SailPoint ISC",
+      "IdentityIQ",
+      "Custom Integrations"
+    ]
+  },
+  {
+    title: "IAM Training",
+    icon: "🎓",
+    description:
+      "Hands-on training covering Identity Governance, SailPoint, interview preparation and enterprise projects.",
+    bullets: [
+      "Real Projects",
+      "Interview Coaching",
+      "Mentorship"
+    ]
+  },
+  {
+    title: "Enterprise Integration",
+    icon: "⚙️",
+    description:
+      "Integrate IAM with Active Directory, Azure AD, Workday, ServiceNow and enterprise applications.",
+    bullets: [
+      "REST APIs",
+      "Java & Spring Boot",
+      "Cloud Ready"
+    ]
+  }
+];
+---
+
+<section id="services" class="services">
+
+<div class="container">
+
+<div class="heading">
+
+<span>OUR SERVICES</span>
+
+<h2>Enterprise Identity Governance Solutions</h2>
+
+<p>
+Helping organisations modernise Identity & Access Management with
+consulting, implementation and enterprise architecture.
+</p>
+
+</div>
+
+<div class="cards">
+
+{
+services.map(service => (
+
+<div class="card">
+
+<div class="icon">
+
+{service.icon}
+
+</div>
+
+<h3>{service.title}</h3>
+
+<p>{service.description}</p>
+
+<ul>
+
+{
+service.bullets.map(item => (
+
+<li>✓ {item}</li>
+
+))
+}
+
+</ul>
+
+<a href="#contact">
+
+Talk to an Expert →
+
+</a>
+
+</div>
+
+))
+}
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.services{
+
+background:#f8fafc;
+
+}
+
+.heading{
+
+text-align:center;
+
+margin-bottom:70px;
+
+}
+
+.heading span{
+
+color:#2563eb;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+}
+
+.heading h2{
+
+margin:20px 0;
+
+}
+
+.heading p{
+
+max-width:700px;
+
+margin:auto;
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:35px;
+
+}
+
+.card{
+
+background:white;
+
+padding:40px;
+
+border-radius:28px;
+
+box-shadow:0 20px 60px rgba(15,23,42,.08);
+
+transition:.35s;
+
+border:1px solid #e2e8f0;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 35px 80px rgba(37,99,235,.18);
+
+}
+
+.icon{
+
+width:70px;
+
+height:70px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:2rem;
+
+background:#eef4ff;
+
+border-radius:18px;
+
+margin-bottom:24px;
+
+}
+
+.card h3{
+
+margin-bottom:16px;
+
+}
+
+.card p{
+
+margin-bottom:24px;
+
+}
+
+.card ul{
+
+list-style:none;
+
+padding:0;
+
+margin:0 0 28px;
+
+}
+
+.card li{
+
+padding:10px 0;
+
+color:#475569;
+
+}
+
+.card a{
+
+text-decoration:none;
+
+font-weight:700;
+
+color:#2563eb;
+
+}
+
+@media(max-width:900px){
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>

@@ -1,0 +1,175 @@
+---
+const technologies = [
+  "SailPoint ISC",
+  "IdentityIQ",
+  "Java",
+  "Spring Boot",
+  "Microsoft Entra ID",
+  "Active Directory",
+  "AWS",
+  "Azure",
+  "ServiceNow",
+  "Workday",
+  "REST APIs",
+  "Oracle"
+];
+---
+
+<section class="technologies">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <span>TECHNOLOGIES</span>
+
+      <h2>Platforms & Technologies We Specialise In</h2>
+
+      <p>
+        We design and implement enterprise Identity & Access Management
+        solutions using industry-leading platforms and cloud technologies.
+      </p>
+
+    </div>
+
+    <div class="tech-grid">
+
+      {
+        technologies.map((tech) => (
+
+          <div class="tech-card">
+
+            <div class="tech-icon">
+
+              {tech.substring(0,1)}
+
+            </div>
+
+            <h3>{tech}</h3>
+
+          </div>
+
+        ))
+      }
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+.technologies{
+
+background:white;
+
+}
+
+.heading{
+
+text-align:center;
+
+margin-bottom:70px;
+
+}
+
+.heading span{
+
+color:#2563eb;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+}
+
+.tech-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+}
+
+.tech-card{
+
+background:#f8fafc;
+
+border:1px solid #e2e8f0;
+
+border-radius:20px;
+
+padding:35px;
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.tech-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 20px 60px rgba(37,99,235,.12);
+
+}
+
+.tech-icon{
+
+width:70px;
+
+height:70px;
+
+border-radius:18px;
+
+background:#2563eb;
+
+color:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:1.8rem;
+
+font-weight:700;
+
+margin:0 auto 20px;
+
+}
+
+.tech-card h3{
+
+font-size:1.05rem;
+
+margin:0;
+
+}
+
+@media(max-width:1000px){
+
+.tech-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:600px){
+
+.tech-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
