@@ -64,3 +64,38 @@ This site is built with a modern static site framework, and the structure is des
 ## Want to learn more?
 
 Explore the framework documentation if you want to extend the site with additional integrations or features.
+
+Important Notes
+GovernIDE Deployment Commands (Astro + Cloudflare)
+This document contains the commands used during development, preview, troubleshooting, and deployment.
+
+Install dependencies
+npm install
+Run development server
+npm run dev
+Build project
+npm run build
+Preview locally (Astro)
+npm run preview
+Clean build (troubleshooting)
+rm -rf dist
+rm -rf .wrangler
+npm run build
+npm run preview
+Cloudflare login
+npx wrangler login
+Deploy to Cloudflare
+npx wrangler deploy
+Recommended package.json scripts
+"dev": "astro dev",
+"build": "astro build",
+"preview": "astro preview",
+"deploy": "astro build && wrangler deploy"
+Useful checks
+cat dist/server/wrangler.json
+head -80 dist/server/entry.mjs
+curl -i http://localhost:8787/
+Important Notes
+Do NOT keep a manual wrangler.json in the project root unless required.
+Allow Astro to generate dist/server/wrangler.json automatically.
+Always verify npm run preview works before deploying.
